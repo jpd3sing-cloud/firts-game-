@@ -9,15 +9,19 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="game">
-        <div class="card" id="A">A</div>
-        <div class="card" id="C">C</div>
-        <div class="card" id="B">B</div>
-        <div class="card" id="C">C</div>
-        <div class="card" id="A">A</div>
-        <div class="card" id="B">B</div>
+<div class="container" id="containerCards">
+
+    <div class="selector">
+         <label for="numCards">Nivel de dificultad:</label>
+         <input type="number" id="numCards" class="nivel" max="8" min="4" value="2">
+        <button class="star">iniciar</button>
     </div>
+   
+    <div class="game" id="gameCards">
+         
+    </div>
+
+    
 </div>
 </body>
 </html>

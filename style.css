@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+input {
+    font-size: 2rem;
+    width: 70px;
+    color: rgb(61, 61, 61);
+}
+
+button {
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
 
 .container {
     display: flex;
@@ -45,7 +56,7 @@
             transform: scale(1.1);
         }
 
-    .card:active {
+    .card.volteada {
             transform: scale(1.05) rotate(45deg);
             color: black; 
     }
@@ -56,5 +67,21 @@
         pointer-events: none; 
 
     }
+
+    .selector {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+         justify-content: center;
+         width: 200px;
+         height: 200px;
+         background-color: rgb(61, 61, 61);
+         border-radius:  10px 0 0 10px;
+         color: whitesmoke;
+
+    }
+
 }
 
