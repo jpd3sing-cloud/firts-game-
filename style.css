@@ -4,15 +4,43 @@
     box-sizing: border-box;
 }
 
+
 input {
-    font-size: 2rem;
-    width: 70px;
-    color: rgb(61, 61, 61);
+    font-size: 1.5rem;
+    width: 80px;
+    padding: 5px;
+    border: 2px solid #34495e;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    text-align: center;
+    outline: none;
 }
 
 button {
-    padding: 10px;
-    font-size: 1.5rem;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #00adb5; 
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background-color: #00f5ff; 
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #1a1a2e; 
 }
 
 
@@ -21,67 +49,92 @@ button {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: visible;
+    overflow: visible;  
     
-    .game {
-        position: relative;
-        display: flex;
-         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        background-color: grey;
-        height: 500px;
-        width: 500px;
-        border-radius: 15px;
-    }
-
-    .card {
-          padding: 7%;
-          color: darkslategrey;
-          position: relative;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 80px;
-          height: 80px;
-          border-radius: 10px;
-          box-shadow: 0 0 5px 5px black;
-          background-color: darkslategrey;
-          margin: 15px;
-          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    }
-
-    .card:hover {
-            transform: scale(1.1);
-        }
-
-    .card.volteada {
-            transform: scale(1.05) rotate(45deg);
-            color: black; 
-    }
-    .card.emparejada {
-        color: black;
-        opacity: 0.8; 
-        cursor: default;
-        pointer-events: none; 
-
-    }
-
+   
     .selector {
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 15px;
         align-items: center;
-         justify-content: center;
-         width: 200px;
-         height: 200px;
-         background-color: rgb(61, 61, 61);
-         border-radius:  10px 0 0 10px;
-         color: whitesmoke;
-
+        justify-content: center;
+        width: 220px;
+        height: 500px; 
+        background-color: #162447; 
+        border-radius: 15px 0 0 15px; 
+        color: #e4e4e4;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+        border-right: 2px solid #1f4068;
+        padding: 20px;
+        text-align: center;
+        font-weight: 500;
     }
 
+    
+    .game {
+        background-color: #1f4068; 
+        height: 500px;
+        width: 500px;
+        border-radius: 0 15px 15px 0; 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 20px;
+        justify-content: center;
+        align-content: space-evenly;
+        padding: 20px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    
+    .card {
+        color: transparent; 
+        font-size: 2rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85px;
+        height: 85px;
+        border-radius: 12px;
+        background-color: #e43f5a; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    
+    .card.volteada {
+        animation: popSacudida 0.4s ease-in-out forwards;
+        background-color: #ffffff; 
+        color: #162447; 
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); 
+    }
+
+    
+    .card.emparejada {
+        background-color: #00adb5; 
+        color: #ffffff;
+        opacity: 0.7; 
+        cursor: default;
+        pointer-events: none; 
+        box-shadow: none;
+    }
 }
 
+
+@keyframes popSacudida {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.15) rotate(-5deg); }
+  40% { transform: scale(1.15) rotate(5deg); }
+  60% { transform: scale(1.15) rotate(-3deg); }
+  80% { transform: scale(1.15) rotate(3deg); }
+  100% { transform: scale(1.1) rotate(0deg); }
+}
